@@ -8,9 +8,9 @@ const CardComponent = ({item}) => {
                       <img src={item.flags.png} className="card-img-top" alt=""/>
                         <div className="card-body">
                             <h4 className="text-white mb-4">{item.name.common}</h4>
-                              <p className="text-white"><strong>Population: {item.population}</strong></p>
-                              <p className="text-white"><strong>Región: {item.region}</strong></p>
-                              <p className="text-white"><strong>Capital: {item.capital}</strong></p>
+                              <p className="text-white"><strong>Population: </strong>{item.population}</p>
+                              <p className="text-white"><strong>Región: </strong>{item.region}</p>
+                              <p className="text-white"><strong>Capital: </strong>{item.capital}</p>
                         </div>
                   </div>
               </div>

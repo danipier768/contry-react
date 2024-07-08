@@ -1,9 +1,13 @@
 import { BsSearch } from "react-icons/bs";
-
-const SekeerComponent = ({updateInput}) => {
+const SekeerComponent = ({updateInput, regFil, updateRegion}) => {
   const handleClickInput = (event) => {
     updateInput(event.target.value)
   };
+   const handleSelectChange = (event) => { 
+     updateRegion(event.target.value)
+   }
+  
+
   return (
     <section className="container-sm container-sekeer">  
       <div className="row">
@@ -30,10 +34,15 @@ const SekeerComponent = ({updateInput}) => {
             </div>
             <div className="col-12 col-md-6 mt-4 justify-content-lg-end justify-content-start">
               <div className="seletor d-flex justify-content-lg-end">
-                <select id="option-id" className="color-selector ps-2 pe-4 py-3 border-0 rounded-3">
-                  <option value="ef">Filter by region</option>
-                  <option></option>
-                </select>
+              <select id="option-id" onChange={handleSelectChange} className="color-selector ps-2 pe-4 py-3 border-0 rounded-3">
+                <option value="ef">Filter by region</option>
+                {
+                regFil?.map((item, index) => (
+                  <option key={index} value={item}>
+                    {item}
+                  </option>
+                ))}
+            </select>
               </div>
             </div>
           </div>
