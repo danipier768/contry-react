@@ -29,3 +29,52 @@ body{
         }
     }
   }
+.dark-mode{
+    background-color: white;
+    .container-head{
+        h1{
+            color: black !important;
+        }
+        background-color: #bbbbbb;
+        .icon{
+            color: black !important;
+        }
+        .button{
+            background-color: #bbbbbb;
+            color: black !important;
+        }
+    }
+    .container-sekeer{
+        .button-busqueda{
+            background-color: #bbbbbb; 
+        }
+        select{
+            background-color: #bbbbbb;
+        }
+        #input-princ{
+            background-color: #bbbbbb;
+        }
+        #input-princ::placeholder{
+            color: black;
+        }
+        select, option {
+            color: black;
+          }
+    }
+    .container-card{
+        .text-nser{
+            color: black !important;
+        }
+        #card{
+            background-color: #bbbbbb;
+            h4{
+                color: black !important;
+            }
+            p{
+                color: black !important;
+            }
+            
+        }
+    }
+}
+

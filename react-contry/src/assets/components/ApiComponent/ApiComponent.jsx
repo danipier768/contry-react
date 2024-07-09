@@ -38,15 +38,25 @@ const ApiComponent = ({valueInput, updateRegion, valReg}) => {
     
   }, [valueInput, valReg]);
 
+
+
   const filerSekeer = () => {
-    if (valueInput.length > 0) {
-      const filSearch = dataTemp.filter(dat => dat.name.common.toLowerCase().includes(valueInput.toLowerCase()))
-      setData(filSearch)
+
+    if (valReg.length>3) {
+      const filRegionSearc = dataTemp.filter(dat => dat.region.toLowerCase().includes(valReg.toLowerCase()) && dat.name.common.toLowerCase().includes(valueInput.toLowerCase()))
+      setData(filRegionSearc)
+    }else{
+      if (valueInput.length > 0) {
+        const filSearch = dataTemp.filter(dat => dat.name.common.toLowerCase().includes(valueInput.toLowerCase()))
+        setData(filSearch)
     }else{
       setData(dataTemp)
     }
     
-  }
+    }
+    }
+    
+  
 
 
   const RegValueFil = () => {
@@ -81,11 +91,15 @@ const ApiComponent = ({valueInput, updateRegion, valReg}) => {
   return (
     <section className="container container-card">
       <div className="row m-0" id="card-id">
-
-      {data.map((item, index) => (
-        <CardComponent key={index} item={item} />
-        
-      ))}
+        {
+          data.length > 0 ? (
+            data.map((item, index) => (
+              <CardComponent key={index} item={item} />
+            ))
+          ) : (
+            <h1 className='text-nser text-white d-flex align-items-center justify-content-center'>No se encontraron resultados</h1>
+          )
+        }
       </div>
     </section>
   );
